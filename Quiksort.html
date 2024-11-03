@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quicksort en JavaScript</title>
+</head>
+<body>
+
+<!-- Agrega un formulario para ingresar los datos -->
+<form id="quicksortForm">
+  <label for="inputArray">Ingresa un array (separado por comas): </label>
+  <input type="text" id="inputArray" required>
+  <button type="button" onclick="ordenar()">Ordenar</button>
+</form>
+
+<!-- Muestra los resultados en este div -->
+<div id="resultado"></div>
+
+<!-- Vincula el archivo JavaScript -->
+<script src="quicksort.js"></script>
+<script>
+  // Función para ordenar cuando se hace clic en el botón
+  function ordenar() {
+    const inputArray = document.getElementById("inputArray").value;
+    const array = inputArray.split(',').map(Number);
+
+    const sortedArray = quicksort(array);
+
+    // Muestra los resultados en el div
+    document.getElementById("resultado").textContent = "Array ordenado: " + sortedArray.join(", ");
+  }
+</script>
+
+</body>
+</html>
